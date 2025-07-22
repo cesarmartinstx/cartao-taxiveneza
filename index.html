@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #1e1e1e;
+            background-color: #000;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -40,7 +40,7 @@
             color: #ccc;
         }
         .btn {
-            background-color: #FFD700;
+            background-color: #D3D3D3;
             color: #000;
             border: none;
             padding: 14px 20px;
@@ -57,7 +57,7 @@
             text-decoration: none;
         }
         .btn:hover {
-            background-color: #e6c200;
+            background-color: #bfbfbf;
         }
         .container {
             padding: 20px;
@@ -66,23 +66,26 @@
         form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             width: 90%;
             max-width: 320px;
             margin: 0 auto;
         }
         input, textarea {
-            padding: 10px;
+            padding: 14px;
             border-radius: 8px;
             border: none;
-            font-size: 14px;
+            font-size: 16px;
         }
         footer {
+            display: none;
+        }
+        .credit {
             text-align: center;
-            color: #888;
-            font-size: 12px;
-            margin-top: auto;
-            padding: 30px 10px 10px;
+            color: #CCCCCC;
+            font-size: 14px;
+            margin-top: 20px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -98,12 +101,12 @@
         <a class="btn" href="#agendar">🚕 Agendar Corrida</a>
         <a class="btn" href="https://wa.me/5581986139277">💬 Chamar no WhatsApp</a>
         <a class="btn" href="tel:+5581986139277">📞 Ligar Direto</a>
-        <a class="btn" href="https://link.mercadopago.com.br/taxiveneza">💳 Pagar com Pix</a>
-        <a class="btn" href="https://www.instagram.com/cesarmartinstaxiveneza">📷 Siga-me no Instagram</a>
-        <a class="btn" href="https://g.page/r/CTryPnBzBuMFEBM/review">⭐ Avalie no Google</a>
-        <a class="btn" href="img/area-atuacao.png" target="_blank">
-            <img src="img/area-atuacao.png" alt="Área de Atuação" style="height:20px;"> Ver Área de Atuação
+        <a class="btn" href="https://link.mercadopago.com.br/taxiveneza">Pagar com Pix</a>
+        <a class="btn" href="https://www.instagram.com/cesarmartinstaxiveneza">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="height:20px;"> Siga-me no Instagram
         </a>
+        <a class="btn" href="https://g.page/r/CTryPnBzBuMFEBM/review">⭐ Avalie no Google</a>
+        <a class="btn" href="img/area-atuacao.png" target="_blank">🗺️ VER ÁREA DE ATUAÇÃO</a>
     </div>
 
     <div class="container" id="agendar">
@@ -117,13 +120,11 @@
             <textarea id="info" placeholder="Informações adicionais" rows="3"></textarea>
             <button type="submit" class="btn">📲 Enviar para WhatsApp Business</button>
         </form>
+        <div class="credit">
+            Obrigado por viajar com o Táxi Veneza!!!<br>
+            César Martins - Licenciado CTTU TP 05934
+        </div>
     </div>
-
-    <footer>
-        Obrigado por viajar com o Táxi Veneza!!!<br>
-        César Martins - Licenciado CTTU TP 05934<br><br>
-        Atualização do Cartão Digital Interativo
-    </footer>
 
     <script>
         document.getElementById('form-agendar').addEventListener('submit', function(e) {
@@ -137,7 +138,7 @@
             const info = document.getElementById('info').value;
 
             const mensagem = `Olá! Gostaria de agendar uma corrida:%0A%0A👤 Nome: ${nome}%0A📍 Origem: ${origem}%0A🚩 Destino: ${destino}%0A📅 Data: ${data}%0A⏰ Hora: ${hora}%0A📝 Info adicional: ${info}`;
-            window.open(`https://wa.me/5581986139277?text=${mensagem}`, '_blank');
+            window.open(`https://wa.me/5581986139277?text=${messagem}`, '_blank');
         });
     </script>
 </body>
