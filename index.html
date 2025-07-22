@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Táxi Veneza | Mobilidade e Turismo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo-volante.png">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px 10px;
+        }
+        header img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            color: #FFD700;
+            font-size: 22px;
+            margin: 0;
+        }
+        header h2 {
+            font-weight: 400;
+            font-size: 14px;
+            margin-top: 5px;
+            color: #ccc;
+        }
+        .btn {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 260px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #e6c200;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 90%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+            margin-top: auto;
+            padding: 30px 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo-volante.png" alt="Táxi Veneza Logo">
+        <h1>Táxi Veneza - Mobilidade e Turismo</h1>
+        <h2>Sua jornada começa aqui. Bora juntos ...!!</h2>
+    </header>
+
+    <div class="container">
+        <a class="btn" href="#agendar">🚕 Agendar Corrida</a>
+        <a class="btn" href="https://wa.me/5581986139277">💬 Chamar no WhatsApp</a>
+        <a class="btn" href="tel:+5581986139277">📞 Ligar Direto</a>
+        <a class="btn" href="https://link.mercadopago.com.br/taxiveneza">💳 Pagar com Pix</a>
+        <a class="btn" href="https://www.instagram.com/cesarmartinstaxiveneza">📷 Siga-me no Instagram</a>
+        <a class="btn" href="https://g.page/r/CTryPnBzBuMFEBM/review">⭐ Avalie no Google</a>
+        <a class="btn" href="img/area-atuacao.png" target="_blank">
+            <img src="img/area-atuacao.png" alt="Área de Atuação" style="height:20px;"> Ver Área de Atuação
+        </a>
+    </div>
+
+    <div class="container" id="agendar">
+        <h2>Agendar Corrida</h2>
+        <form id="form-agendar">
+            <input type="text" id="nome" placeholder="Nome e Sobrenome" required>
+            <input type="text" id="origem" placeholder="Local de Origem" required>
+            <input type="text" id="destino" placeholder="Local de Destino" required>
+            <input type="date" id="data" required>
+            <input type="time" id="hora" required>
+            <textarea id="info" placeholder="Informações adicionais" rows="3"></textarea>
+            <button type="submit" class="btn">📲 Enviar para WhatsApp Business</button>
+        </form>
+    </div>
+
+    <footer>
+        Obrigado por viajar com o Táxi Veneza!!!<br>
+        César Martins - Licenciado CTTU TP 05934<br><br>
+        Atualização do Cartão Digital Interativo
+    </footer>
+
+    <script>
+        document.getElementById('form-agendar').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const origem = document.getElementById('origem').value;
+            const destino = document.getElementById('destino').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            const info = document.getElementById('info').value;
+
+            const mensagem = `Olá! Gostaria de agendar uma corrida:%0A%0A👤 Nome: ${nome}%0A📍 Origem: ${origem}%0A🚩 Destino: ${destino}%0A📅 Data: ${data}%0A⏰ Hora: ${hora}%0A📝 Info adicional: ${info}`;
+            window.open(`https://wa.me/5581986139277?text=${mensagem}`, '_blank');
+        });
+    </script>
+</body>
+</html>
